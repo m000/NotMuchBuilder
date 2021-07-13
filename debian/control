@@ -8,7 +8,6 @@ Uploaders:
 Build-Conflicts:
  gdb [ia64 mips mips64el hppa],
  gdb-minimal,
- ruby1.8,
 Build-Depends:
  bash-completion (>=1.9.0~),
  debhelper-compat (= 13),
@@ -29,8 +28,6 @@ Build-Depends:
  python3-pytest-cov,
  python3-setuptools,
  python3-sphinx,
- ruby,
- ruby-dev (>>1:1.9.3~),
  texinfo,
  xapian-tools <!nocheck>,
 Standards-Version: 4.4.1
@@ -46,7 +43,7 @@ Depends:
  ${misc:Depends},
  ${shlibs:Depends},
 Recommends:
- notmuch-vim | notmuch-mutt | alot,
+ notmuch-mutt | alot,
  gnupg-agent,
  gpgsm,
 Suggests:
@@ -128,44 +125,6 @@ Description: Python 3 interface to the notmuch mail search and index library
  notmuch library.
  .
  This is the preferred way to use notmuch via Python.
-
-Package: ruby-notmuch
-Architecture: any
-Section: ruby
-Depends:
- ${misc:Depends},
- ${shlibs:Depends},
-Description: Ruby interface to the notmuch mail search and index library
- Notmuch is a system for indexing, searching, reading, and tagging
- large collections of email messages in maildir or mh format. It uses
- the Xapian library to provide fast, full-text search with a very
- convenient search syntax.
- .
- This package provides a Ruby interface to the notmuch
- functionality, directly interfacing with a shared notmuch library.
-
-Package: notmuch-vim
-Architecture: all
-Breaks:
- notmuch (<<0.6~254~),
-Replaces:
- notmuch (<<0.6~254~),
-Depends:
- notmuch,
- ruby-notmuch,
- vim-addon-manager,
- vim-ruby,
- ${misc:Depends},
-Recommends:
- ruby-mail,
-Description: thread-based email index, search and tagging (vim interface)
- Notmuch is a system for indexing, searching, reading, and tagging
- large collections of email messages in maildir or mh format. It uses
- the Xapian library to provide fast, full-text search with a very
- convenient search syntax.
- .
- This package provides a vim based mail user agent based on
- notmuch.
 
 Package: notmuch-mutt
 Architecture: all
