@@ -3,7 +3,7 @@
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 
 %:
-	dh $@ --with python3,elpa
+	dh $@ --with python3
 
 override_dh_auto_configure:
 	BASHCMD=/bin/bash ./configure --prefix=/usr \
