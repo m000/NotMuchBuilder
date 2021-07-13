@@ -1,3 +1,4 @@
 usr/share/applications/mimeinfo.cache
 usr/share/info/dir
 usr/share/emacs/site-lisp/*.elc
+usr/share/info/*.info
